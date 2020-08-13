@@ -3,34 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacific Depths</title>
+    <title>Abbysal Depths</title>
     <style>
-        #sky{
-            background-color: #bff2ff;
-            height: 500px;
-            margin: -10px;
+        html {
+            scroll-behavior: smooth;
+            min-height: 100%;
         }
+
+        body {
+            margin: 0px;
+            height: 110500px;
+        }
+
+        a.anchor {
+            display: block;
+            position: relative;
+            top: -100px;
+            visibility: hidden;
+        }
+
+        #sky {
+            background-color: #9ae7fa;
+            height: 500px;
+            align-content: center;
+        }
+
+        #cargo-ship {
+            height: 50px;
+            position: relative;
+            top: 450px;
+            left: 70%;
+        }
+
         #sea { 
             display: grid;
             grid-template-columns: 170px auto 170px;
             grid-template-rows: auto;
-
-            height: 109110px; 
+            height: 110000; 
             background: linear-gradient(180deg, #43d7fc 0%, #001170 1.83%, #000000 9.12%);
-            margin: -10px;
             color: white; 
+            z-index: 1;
         }
+
+        #scuba-diver {
+            height: 20px;
+            position: relative;
+            top: -60px;
+            left: -120px;
+        }
+
+        #submarine {
+            height: 60px;
+            position: relative;
+            top: -80px;
+            right: -300px;
+        }
+
 
         div.info{
             grid-row: 1;
             grid-column: 2;
-
             display: grid;
             grid-template-columns: auto;
-            grid-template-rows: 2000px 8000px 20000px 30000px; 
-
+            grid-template-rows: 1740px 260px 1200px 5800px 1000px 380px 19620px 6460px 3240px 20300px 28000px 21440px 200px 200px 100px; 
             text-align: center;
-            
+        }
+
+        div.zone {
+            margin-top: 20px;
+            z-index: 2;
+
+        }
+
+        div.label{
+            border-top: solid white 1px;
+            z-index: 2;
         }
 
         #ruler{
@@ -38,39 +85,152 @@
             grid-column: 1;
             padding-left: 20px;
             width: 150px;
+            z-index: 2;
         }
+
         div.tick{
             height: 50px;
             margin-bottom: 950px;
             font-size: 50px;
         }
+
+        #trench {
+            width: 100%;
+            height: 50000px;
+            position: absolute;
+            top: 60500px;
+            left: 0px;
+            z-index: 1;
+        }
+
+        #trieste {
+            height: 30px;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
         
     </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="sky"></div>
+
+    <nav class="navbar navbar-dark bg-transparrent fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Abyssal Depths</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#top">Surface <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sunlight">Epipelagic Zone</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#twilight">Mesopelagic Zone</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#midnight">Bathypelagic Zone</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#abyssal">Abyssopelagic Zone</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#hadal">Hadopelagic Zone</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#challenger-deep">Challenger Deep</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <img src="assets/images/trench.png" id="trench">
+    <div id="sky">
+        <img src="assets/images/cargo-ship.png" id="cargo-ship">
+    </div>
     <div id="sea">
         <div class="info">
-            <div id="sunlight">
-                <h2>Epipelagic Zone</h2>
-                <h3>(The Sunlight Zone)</h3>
+            <div class="zone">
+                <a class="anchor" id="sunlight"></a>
+                <a href="sunlight.html">
+                    <h2>Epipelagic Zone</h2>
+                    <h3>(The Sunlight Zone)</h3>
+                </a>
             </div>
-            <div id="twighlight">
-                <h2>Mesopelagic Zone</h2>
-                <h3>(The Twighlight Zone)</h3>
+            <div class="label">
+                <h3>174m</h3>
+                <p>Maximum Depth of the English Channel</p>
             </div>
-            <div id="midnight">
-                <h2>The Bathypelagic Zone</h2>
-                <h3>(The Midnight Zone)</h3>
+            <div class="zone">
+                <a class="anchor" id="twilight"></a>
+                <a href="twilight.html">
+                    <h2>Mesopelagic Zone</h2>
+                    <h3>(The Twilight Zone)</h3>
+                </a>
+                <div></div>
             </div>
-            <div id="abyssal">
-                <h2>The Abyssopelagic Zone</h2>
-                <h3>(The Abyssal Zone)</h3>
+            <div>
+                <h3>332m</h3>
+                <p>Deepest Scuba Dive</p>
+                <img src="assets/images/scuba-diver.png" id="scuba-diver">
             </div>
-            <div id="hadal">
-                <h2>The Hadopelagic Zone</h2>
-                <h3>(The Hadal Zone)</h3>
+            <div>
+                <h3>900m</h3>
+                <p>Estimated Military Submarine Maximum Depth</p>
+                <img src="assets/images/submarine.png" id="submarine">
             </div>
+            <div class="zone">
+                <a class="anchor" id="midnight"></a>
+                <a href="midnight.html">
+                    <h2>The Bathypelagic Zone</h2>
+                    <h3>(The Midnight Zone)</h3>
+                </a>
+            </div>
+            <div class="label">
+                <h3>1038m</h3>
+                <p>Average Depth of the Arctic Ocean</p>
+            </div>
+            <div class="zone">
+                <a class="anchor" id="abyssal"></a>
+                <a href="abyssal.html">
+                    <h2>The Abyssopelagic Zone</h2>
+                    <h3>(The Abyssal Zone)</h3>
+                </a>
+            </div>
+            <div class="label">
+                <h3>3646m</h3>
+                <p>Average Depth of the Atlantic Ocean</p>
+            </div>
+            <div class="label">
+                <h3>3970m</h3>
+                <p>Average Depth of the Pacific Ocean</p>
+            </div>
+            <div class="zone">
+                <a class="anchor" id="hadal"></a>
+                <a href="hadal.html">
+                    <h2>The Hadopelagic Zone</h2>
+                    <h3>(The Hadal Zone)</h3>
+                </a>
+            </div>
+            <div class="label">
+                <h3>8800m</h3>
+                <p>Maximum Depth of the Atlantic Ocean (Puerto Rico Trench)</p>
+            </div>
+            <div class="zone">
+                <a class="anchor" id="challenger-deep"></a>
+                <a href="challenger-deep.html">
+                    <h2>The Challenger Deep</h2>
+                </a>
+            </div>
+            <div>
+                <img src="assets/images/trieste.png" id="trieste">
+            </div>
+            <div class="label">
+                <h3>10984m</h3>
+                <p>Maximum Depth of the Pacific Ocean (Mariana Trench)</p>
+            </div> 
         </div>
         <div id="ruler">
             <div class="tick">0m</div>
@@ -183,7 +343,7 @@
             <div class="tick">10700m</div>
             <div class="tick">10800m</div>
             <div class="tick">10900m</div>
-        </div>
-    </div>
+        </div> 
+    </div>  
 </body>
 </html>
